@@ -1,0 +1,3 @@
+﻿<bg>
+  <modal-keyboard clickerino-offerino-closerino="false" on-enter="#on-enter" show-event="#show-event" hide-event="#hide-event" move-to-center="true" value="NameValue"></modal-keyboard>
+</bg>

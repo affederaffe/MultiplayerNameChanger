@@ -1,0 +1,3 @@
+﻿<settings-container>
+  <bool-setting text="Override Multiplayer Name" value="#use" apply-on-change="true"></bool-setting>
+</settings-container>
