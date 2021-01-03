@@ -1,2 +1,2 @@
 # MultiplayerNameChanger
-Simply changes your name in Beat Saber Multiplayer
+Simply change your name in Beat Saber Multiplayer
