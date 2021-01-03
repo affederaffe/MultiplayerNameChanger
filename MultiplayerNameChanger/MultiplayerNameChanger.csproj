@@ -111,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Harmony Patches\ChangeName_Patch.cs" />
-    <Compile Include="Installers\UIInstaller.cs" />
+    <Compile Include="Installers\OnMenuInstaller.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Configuration\PluginConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

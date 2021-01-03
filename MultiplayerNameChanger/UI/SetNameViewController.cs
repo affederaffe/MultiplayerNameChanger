@@ -15,6 +15,8 @@ namespace MultiplayerNameChanger.UI {
 
     internal class SetNameViewController : BSMLResourceViewController {
 
+        [Inject]
+        public readonly MenuTransitionsHelper _helper;
 
         [Inject]
         public readonly SetNameFlowCoordinator _setNameFlowCoordinator;
@@ -25,13 +27,15 @@ namespace MultiplayerNameChanger.UI {
         public readonly BSMLParserParams parserParams;
 
         [UIValue("NameValue")]
-        public string NameValue = Configuration.PluginConfig.Instance.NameValue;
+        public string NameValue {
+            get => Configuration.PluginConfig.Instance.NameValue;
+            set { }
+        }
 
         [UIAction("#on-enter")]
         public void OnEnter(string value) {
             Configuration.PluginConfig.Instance.NameValue = value;
-            NameValue = value;
-            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(_setNameFlowCoordinator);
+            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(_setNameFlowCoordinator, _helper.RestartGame, AnimationDirection.Horizontal, true);
         }
 
         internal void ActivateKeyboard() {

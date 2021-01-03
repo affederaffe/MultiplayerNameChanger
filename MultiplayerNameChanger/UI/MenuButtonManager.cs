@@ -12,17 +12,21 @@ namespace MultiplayerNameChanger.UI {
 
     internal class MenuButtonManager : IInitializable, IDisposable {
 
+        internal readonly MenuTransitionsHelper _helper;
+
         private readonly MenuButton _menuButton;
         private readonly SetNameFlowCoordinator _setNameFlowCoordinator;
+        private readonly Settings _settings;
 
-        public MenuButtonManager(SetNameFlowCoordinator setNameFlowCoordinator) {
+        public MenuButtonManager(SetNameFlowCoordinator setNameFlowCoordinator, Settings settings) {
             _setNameFlowCoordinator = setNameFlowCoordinator;
             _menuButton = new MenuButton("Name Changer", "Change your Multiplayer name here!", SummonFlowCoordinator);
+            _settings = settings;
         }
 
         public void Initialize() {
             MenuButtons.instance.RegisterButton(_menuButton);
-            BSMLSettings.instance.AddSettingsMenu("Name Changer", "MultiplayerNameChanger.UI.SettingsView.bsml", Settings.instance);
+            BSMLSettings.instance.AddSettingsMenu("Name Changer", "MultiplayerNameChanger.UI.SettingsView.bsml", _settings);
         }
 
         public void Dispose() {

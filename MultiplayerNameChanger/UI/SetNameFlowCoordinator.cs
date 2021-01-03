@@ -4,6 +4,7 @@ using HMUI;
 
 using Zenject;
 
+
 namespace MultiplayerNameChanger.UI {
 
 
@@ -11,6 +12,9 @@ namespace MultiplayerNameChanger.UI {
 
         [Inject]
         private readonly SetNameViewController _setNameViewController;
+
+        [Inject]
+        public readonly IPlatformUserModel platformUserModel;
 
         protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
             if (firstActivation) {

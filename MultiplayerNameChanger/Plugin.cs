@@ -34,7 +34,7 @@ namespace MultiplayerNameChanger {
 
         [Init]
         public void InitWithZenjector(Zenjector zenjector) {
-            zenjector.OnMenu<UIInstaller>();
+            zenjector.OnMenu<OnMenuInstaller>();
         }
     }
 }
