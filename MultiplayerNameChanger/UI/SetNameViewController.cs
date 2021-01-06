@@ -36,7 +36,8 @@ namespace MultiplayerNameChanger.UI {
 
         [UIValue("ClanName")]
         public string ClanName {
-            get => "["+ PluginConfig.Instance.ClanValue + "]";
+            get => "[" + PluginConfig.Instance.ClanValue + "]";
+            set { }
         }
 
         [UIAction("#on-enter-name")]
