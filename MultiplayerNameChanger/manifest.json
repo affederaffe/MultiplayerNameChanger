@@ -3,7 +3,7 @@
   "id": "MultiplayerNameChanger",
   "name": "MultiplayerNameChanger",
   "author": "affederaffe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Changes your name in Multiplayer",
   "gameVersion": "1.13.0",
   "dependsOn": {

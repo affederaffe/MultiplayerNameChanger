@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Harmony Patches\ChangeName_Patch.cs" />
+    <Compile Include="Harmony Patches\Patcher.cs" />
     <Compile Include="Installers\OnMenuInstaller.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Configuration\PluginConfig.cs" />
@@ -127,8 +128,8 @@
     <None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
     <None Include="Directory.Build.targets" Condition="Exists('Directory.Build.targets')" />
     <None Include="MultiplayerNameChanger.csproj.user" Condition="Exists('MultiplayerNameChanger.csproj.user')" />
-    <EmbeddedResource Include="UI\SetNameView.bsml" />
-    <EmbeddedResource Include="UI\SettingsView.bsml" />
+    <EmbeddedResource Include="Views\SetNameView.bsml" />
+    <EmbeddedResource Include="Views\SettingsView.bsml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BeatSaberModdingTools.Tasks">

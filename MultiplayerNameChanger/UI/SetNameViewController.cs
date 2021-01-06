@@ -1,50 +1,54 @@
-﻿using System.Collections.Generic;
+﻿using System.ComponentModel;
 
-using BeatSaberMarkupLanguage;
 using BeatSaberMarkupLanguage.Attributes;
 using BeatSaberMarkupLanguage.Parser;
 using BeatSaberMarkupLanguage.ViewControllers;
 
-using UnityEngine;
-
 using Zenject;
+
+using MultiplayerNameChanger.Configuration;
 
 
 namespace MultiplayerNameChanger.UI {
 
 
-    internal class SetNameViewController : BSMLResourceViewController {
-
-        [Inject]
-        public readonly MenuTransitionsHelper _helper;
+    internal class SetNameViewController : BSMLResourceViewController, INotifyPropertyChanged {
 
         [Inject]
         public readonly SetNameFlowCoordinator _setNameFlowCoordinator;
 
-        public override string ResourceName => "MultiplayerNameChanger.UI.SetNameView.bsml";
+        public override string ResourceName => "MultiplayerNameChanger.Views.SetNameView.bsml";
 
         [UIParams]
         public readonly BSMLParserParams parserParams;
 
         [UIValue("NameValue")]
         public string NameValue {
-            get => Configuration.PluginConfig.Instance.NameValue;
+            get => PluginConfig.Instance.NameValue;
             set { }
         }
 
-        [UIAction("#on-enter")]
-        public void OnEnter(string value) {
-            Configuration.PluginConfig.Instance.NameValue = value;
-            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(_setNameFlowCoordinator, _helper.RestartGame, AnimationDirection.Horizontal, true);
+        [UIValue("ClanValue")]
+        public string ClanValue {
+            get => PluginConfig.Instance.ClanValue;
+            set { }
         }
 
-        internal void ActivateKeyboard() {
-            SharedCoroutineStarter.instance.StartCoroutine(WaitAndShowKeyboard());
+        [UIValue("ClanName")]
+        public string ClanName {
+            get => "["+ PluginConfig.Instance.ClanValue + "]";
         }
 
-        private IEnumerator<WaitForSeconds> WaitAndShowKeyboard() {
-            yield return new WaitForSeconds(0.5f);
-            parserParams.EmitEvent("#show-event");
+        [UIAction("#on-enter-name")]
+        public void OnEnterName(string value) {
+            PluginConfig.Instance.NameValue = value;
+            NotifyPropertyChanged("NameValue");
+        }
+
+        [UIAction("#on-enter-clan")]
+        public void OnEnterClan(string value) {
+            PluginConfig.Instance.ClanValue = value;
+            NotifyPropertyChanged("ClanName");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace MultiplayerNameChanger.UI {
 
         public void Initialize() {
             MenuButtons.instance.RegisterButton(_menuButton);
-            BSMLSettings.instance.AddSettingsMenu("Name Changer", "MultiplayerNameChanger.UI.SettingsView.bsml", _settings);
+            BSMLSettings.instance.AddSettingsMenu("Name Changer", "MultiplayerNameChanger.Views.SettingsView.bsml", _settings);
         }
 
         public void Dispose() {

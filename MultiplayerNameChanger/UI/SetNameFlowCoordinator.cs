@@ -14,7 +14,7 @@ namespace MultiplayerNameChanger.UI {
         private readonly SetNameViewController _setNameViewController;
 
         [Inject]
-        public readonly IPlatformUserModel platformUserModel;
+        private readonly MenuTransitionsHelper _helper;
 
         protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
             if (firstActivation) {
@@ -22,12 +22,12 @@ namespace MultiplayerNameChanger.UI {
                 SetTitle("Change Mutliplayer Name");
                 ProvideInitialViewControllers(_setNameViewController);
             }
-            _setNameViewController.ActivateKeyboard();
+            //_setNameViewController.ActivateKeyboard();
         }
 
         protected override void BackButtonWasPressed(ViewController topViewController) {
             base.BackButtonWasPressed(topViewController);
-            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(this);
+            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(this, _helper.RestartGame, ViewController.AnimationDirection.Horizontal, true);
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿<bg>
+  <modal-keyboard clickerino-offerino-closerino="true" on-enter="#on-enter-clan" show-event="#show-clan" hide-event="#hide-clan" move-to-center="true" value="ClanValue"></modal-keyboard>
+  <modal-keyboard clickerino-offerino-closerino="true" on-enter="#on-enter-name" show-event="#show-name" hide-event="#hide-name" move-to-center="true" value="NameValue"></modal-keyboard>
+
+  <horizontal>
+    <vertical>
+      <text text="Clan" font-size="10" color="#22e5e5" pad-top="5" pad-bottom="5" bg="panel-top"></text>
+      <text text="~ClanName" font-size="12" color="#22e583" pad-top="5" pad-bottom="5"></text>
+      <button text="Change Clan" click-event="#show-clan" font-size="9" pad-top="5" pad-bottom="5"></button>
+    </vertical>
+
+    <vertical>
+      <text text="Name" font-size="10" color="#e2e522" pad-top="5" pad-bottom="5" bg="panel-top"></text>
+      <text text="~NameValue" font-size="12" color="#ea8920" pad-top="5" pad-bottom="5"></text>
+      <button text="Change Name" click-event="#show-name" font-size="9" pad-top="5" pad-bottom="5"></button>
+    </vertical>
+  </horizontal>
+</bg>
