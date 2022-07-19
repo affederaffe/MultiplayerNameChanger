@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <BeatSaberDir>D:\SteamLibrary\steamapps\common\Beat Saber</BeatSaberDir>
-    <ReferencePath>D:\SteamLibrary\steamapps\common\Beat Saber\Beat Saber_Data\Managed;D:\SteamLibrary\steamapps\common\Beat Saber\Libs;D:\SteamLibrary\steamapps\common\Beat Saber\Plugins</ReferencePath>
+    <BeatSaberDir></BeatSaberDir>
+    <ReferencePath></ReferencePath>
   </PropertyGroup>
 </Project>
