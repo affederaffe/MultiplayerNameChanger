@@ -25,9 +25,14 @@ namespace MultiplayerNameChanger.UI {
             //_setNameViewController.ActivateKeyboard();
         }
 
+        private void RestartGame()
+        {
+            _helper.RestartGame(null);
+        }
+
         protected override void BackButtonWasPressed(ViewController topViewController) {
             base.BackButtonWasPressed(topViewController);
-            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(this, _helper.RestartGame, ViewController.AnimationDirection.Horizontal, true);
+            BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(this, RestartGame, ViewController.AnimationDirection.Horizontal, true);
         }
     }
 }
